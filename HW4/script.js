@@ -1,38 +1,42 @@
-birthday = prompt("Рік народження:")
-city = prompt("Місто проживання:")
-sport = prompt("Улюблений спорт:")
-userCity = city.toLowerCase();
-userSport = sport.toLowerCase();
-if (birthday == null) {
-    alert("Шкода, що Ви не захотіли ввести свій рік")
-}
-if (city == null) {
-    alert("Шкода, що Ви не захотіли ввести своє місто")
-}
-if (sport == null) {
-    alert("Шкода, що Ви не захотіли ввести свій спорт")
-}
-kyiv = "київ"
-wash = "вашингтон"
-london = "лондон"
-ua = "України"
-usa = "Америки"
-uk = "Англії"
-function ageUser1() {
-    alert(`Ваш вік: ${2023 - birthday}`)
+birthday = prompt("Рік народження:");
+city = prompt("Місто проживання:");
+sport = prompt("Улюблений спорт:");
+
+if (birthday !== null) {
+    age = 2023 - parseInt(birthday);
+    result += "Ваш вік: " + age + " років\n";
+} else {
+    result += "Шкода, що Ви не захотіли ввести свій рік народження.\n";
 }
 
-function city1() {
-    if (userCity == kyiv) {
-        alert(`Ти живеш у столиці ${ua}`)
-    } else if (userCity == wash) {
-        alert(`Ти живеш у столиці ${usa}}`)
-    } else if (userCity == london) {
-        alert(`Ти живеш у столиці ${uk}`)
-    } else if (city !== kyiv && wash && london)
-        alert(`Ти живеш у місті ${city}`)
+if (city !== null) {
+    userCity = city.toLowerCase();
+    if (userCity === "київ") {
+        result += "Ти живеш у столиці України\n";
+    } else if (userCity === "вашингтон") {
+        result += "Ти живеш у столиці Америки\n";
+    } else if (userCity === "лондон") {
+        result += "Ти живеш у столиці Великої Британії\n";
+    } else {
+        result += "Ти живеш у місті " + city + "\n";
+    }
+} else {
+    result += "Шкода, що Ви не захотіли ввести своє місто проживання.\n";
 }
-cityUser = city1();
-ageUser = ageUser1();
 
-alert(`${ageUser}, ${cityUser}`);
+if (sport !== null) {
+    userSport = sport.toLowerCase();
+    if (userSport === "баскетбол") {
+        result += "Круто! Хочеш стати Майкл Джордан";
+    } else if (userSport === "футбол") {
+        result += "Круто! Хочеш стати Леонель Мессі";
+    } else if (userSport === "бокс") {
+        result += "Круто! Хочеш стати Олександр Усик";
+    } else {
+        result += "ШО?";
+    }
+} else {
+    result += "Шкода, що Ви не захотіли ввести свій улюблений спорт.\n";
+}
+
+alert(result);
