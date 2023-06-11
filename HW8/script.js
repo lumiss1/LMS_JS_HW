@@ -89,7 +89,7 @@ function task6() {
     for (let i = 0; i < array.length; i++) {
         maxElem = Math.max(...array)
         if (maxElem > array[i]) {
-            array.splice(0, array.length, maxElem)
+            array[i] = 0
         }
     }
     console.log(maxElem)
