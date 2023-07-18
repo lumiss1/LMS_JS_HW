@@ -32,17 +32,18 @@ class Car {
       return null;
     }
   }
-
-  getInfo() {
-    console.log(
-      `Марка: ${this.brand}, Модель: ${this.model}, Рік: ${this.year}, Номерний знак: ${this.license_plate}`
-    );
+  getOwner() {
     console.log("Власник:");
     if (this.owner) {
       this.owner.getInfo();
     } else {
       console.log("Немає 18 років");
     }
+  }
+  getInfo() {
+    console.log(
+      `Марка: ${this.brand}, Модель: ${this.model}, Рік: ${this.year}, Номерний знак: ${this.license_plate}`
+    );
   }
 }
 
