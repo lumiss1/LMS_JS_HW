@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW25</title>
+</head>
+
+<body>
+
+    <button type="submit" id="linkBT1">Посилання 1</button>
+    <button type="submit" id="linkBT2">Посилання 2</button>
+</body>
+
+<script>
+    const linkBT1 = document.getElementById("linkBT1")
+    const linkBT2 = document.getElementById("linkBT2")
+    let btn1 = prompt("Введіть посилання 1:", "");
+    let btn2 = prompt("Введіть посилання 2:", "");
+    let links1 = []
+    let links2 = []
+
+    if (btn1) {
+        btn1 = addProtocol(btn1);
+        links1.push(btn1)
+    } else alert("Непрвильне посилання, додайте http або https")
+
+    if (btn2) {
+        btn2 = addProtocol(btn2);
+        links2.push(btn2)
+
+    } else alert("Непрвильне посилання, додайте http або https")
+
+    function validateLinkProtocol(link) {
+        const lowercasedLink = link.toLowerCase();
+        return lowercasedLink.startsWith("http://") || lowercasedLink.startsWith("https://");
+    }
+
+    function addProtocol(link) {
+        const lowercasedLink = link.toLowerCase();
+        if (!lowercasedLink.startsWith("http://") && !lowercasedLink.startsWith("https://")) {
+            alert("Не було протоколу http або https, але все додано :)")
+            return "https://" + link;
+        }
+        return link;
+    }
+
+    linkBT1.addEventListener("click", () => { window.open(links1) })
+    linkBT2.addEventListener("click", () => { window.open(links2) })
+
+</script>
+
+</html>
