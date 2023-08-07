@@ -17,12 +17,12 @@
   </style>
 </head>
 <body>
-  <div class="container" onmouseover="showDiv()" onmouseout="hideDiv()">
+  <div class="container" onclick="showDiv()" onmouseout="hideDiv()">
     <textarea cols="30" rows="10">Наведіть курсор на це поле</textarea>
     <div class="hidden-div" id="infoDiv">
       <p>!!!прихований Div!!!</p>
     </div>
-  </div>
+  </div>  
 
   <script>
     function showDiv() {
