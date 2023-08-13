@@ -17,8 +17,8 @@
   </style>
 </head>
 <body>
-  <div class="container" onclick="showDiv()" onmouseout="hideDiv()">
-    <textarea cols="30" rows="10">Наведіть курсор на це поле</textarea>
+  <div class="container">
+    <textarea cols="30" rows="10" onfocus="showDiv()" onblur="hideDiv()">Наведіть курсор на це поле</textarea>
     <div class="hidden-div" id="infoDiv">
       <p>!!!прихований Div!!!</p>
     </div>
