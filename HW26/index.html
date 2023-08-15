@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW26</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="vote">
+        <input type="radio" id="verygood" name="smile" value="verygood" onclick="vote(0)">
+        <label for="verygood">&#128513;</label><br>
+        <input type="radio" id="good" name="smile" value="good" onclick="vote(1)">
+        <label for="good">&#128515;</label><br>
+        <input type="radio" id="normal" name="smile" value="normal" onclick="vote(2)">
+        <label for="normal">&#128528;</label><br>
+        <input type="radio" id="bad" name="smile" value="bad" onclick="vote(3)">
+        <label for="bad">&#128543;</label><br>
+        <input type="radio" id="verybad" name="smile" value="verybad" onclick="vote(4)">
+        <label for="verybad">&#128545;</label><br>
+    </section>
+    <div class="result">
+        <p>Результати голосування:</p>
+        <p>&#128513; <span id="count0">: 0</span> </p>
+        <p>&#128515; <span id="count1">: 0</span> </p>
+        <p>&#128528; <span id="count2">: 0</span> </p>
+        <p>&#128543; <span id="count3">: 0</span> </p>
+        <p>&#128545; <span id="count4">: 0</span> </p>
+    </div>
+
+
+    <script>
+        const counts = [0, 0, 0, 0, 0];
+    
+        function updateResult(index) {
+            const countElem = document.getElementById(`count${index}`)
+            countElem.textContent = counts[index];
+        }
+    
+        function vote(index) {
+            counts[index]++;
+            updateResult(index)
+        }
+        updateResult(0)
+        updateResult(1)
+        updateResult(2)
+        updateResult(3)
+        updateResult(4)
+    </script>
+    
+</body>
+
+</html>

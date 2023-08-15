@@ -1,0 +1,26 @@
+.vote {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+}
+
+input {
+  font-size: 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.subm {
+  padding: 10px 40px;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  font-size: 30px;
+}/*# sourceMappingURL=style.css.map */
